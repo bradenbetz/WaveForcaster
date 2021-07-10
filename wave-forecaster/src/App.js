@@ -1,25 +1,42 @@
-import logo from './logo.svg';
 import './App.css';
+import React from "react";
+import rp from "request-promise";
+import * as cheerio from "react-dom/test-utils";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const url = "https://cors-anywhere.herokuapp.com/https://www.ndbc.noaa.gov/station_page.php?station=51201"
+
+class App extends React.Component {
+  state = {};
+
+    componentDidMount() {
+        rp(url)
+            .then(html => {
+                let $ = cheerio.load(html);
+                let data = [];
+
+                $("#data table span").each(
+                    function(i, element) {
+                    let stuffs = $(this)
+                        .prepend()
+                        .text()
+                    stuffs.push(data);
+                });
+            })
+            .catch(function(err) {
+                console.log("crawl failed");
+            });
+    }
+
+  render() {
+    return (
+        <div>
+            {this.state.data}
+            <p>test</p>
+        </div>
+    )
+  }
+
+
 }
 
 export default App;
