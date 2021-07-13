@@ -3,7 +3,12 @@ import React from "react";
 import GetData from "./Functions/GetData.js"
 
 class App extends React.Component {
-
+/*
+TODO
+- Create function to retrieve .txt file
+- display the calculated wave height
+- make it fancy
+ */
 
   render() {
     return (
