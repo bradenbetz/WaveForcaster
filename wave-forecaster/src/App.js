@@ -1,5 +1,6 @@
 import './App.css';
 import React from "react";
+import GetData from "./Functions/GetData.js"
 
 class App extends React.Component {
 
