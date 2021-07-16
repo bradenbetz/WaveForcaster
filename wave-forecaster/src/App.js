@@ -1,8 +1,14 @@
 import './App.css';
-import React from "react";
-import GetData from "./Functions/GetData.js"
+import React from 'react';
+//import { Container } from 'react';
+//import SpotCheck from "./SpotCheck";
+import GetData from './Functions/GetData.js'
+
+let swell = 0;
+let period = 0;
 
 class App extends React.Component {
+
 /*
 TODO
 - Create function to retrieve .txt file
@@ -10,16 +16,18 @@ TODO
 - make it fancy
  */
 
-  render() {
+componentDidMount() {
+    GetData.retrieve(swell, period);
+}
+
+    render() {
     return (
         <div>
-            {this.data}
             <p>test</p>
         </div>
     )
   }
-
-
 }
 
 export default App;
+
