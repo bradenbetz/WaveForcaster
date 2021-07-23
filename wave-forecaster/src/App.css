@@ -13,6 +13,18 @@
   }
 }
 
+#title {
+  align-items: flex-start;
+  text-decoration-color: #282c34;
+
+}
+
+#calc {
+  align-items: center;
+  text-decoration-color: bisque;
+}
+
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
