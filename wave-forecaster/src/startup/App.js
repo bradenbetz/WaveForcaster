@@ -1,10 +1,10 @@
 import '../style/App.css';
 import React from 'react';
+import NavBar from "../ui/NavBar.js";
 import SpotCheck from "../ui/SpotCheck";
 import {retrieveData} from "../Functions/Functions";
 
 const url = "https://www.ndbc.noaa.gov/data/realtime2/51201.txt";
-
 
 class App extends React.Component {
 
@@ -22,8 +22,7 @@ componentDidMount() {
     render() {
     return (
         <div>
-            <h1 className='title' >Wave Forecaster</h1>
-            <SpotCheck/>
+            <NavBar/>
         </div>
 
     )

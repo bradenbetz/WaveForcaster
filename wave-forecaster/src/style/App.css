@@ -24,6 +24,10 @@
   text-decoration-color: bisque;
 }
 
+#navbar {
+  background-color: #007fff;
+}
+
 
 .App-header {
   background-color: #282c34;
