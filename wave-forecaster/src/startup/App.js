@@ -1,10 +1,10 @@
-import '../App.css';
+import '../style/App.css';
 import React from 'react';
 import SpotCheck from "../ui/SpotCheck";
-import { retrieve } from '../Functions/Functions.js'
+import {retrieveData} from "../Functions/Functions";
 
-let swell = 0;
-let period = 0;
+const url = "https://www.ndbc.noaa.gov/data/realtime2/51201.txt";
+
 
 class App extends React.Component {
 
@@ -16,7 +16,7 @@ TODO
  */
 
 componentDidMount() {
-    retrieve(swell, period);
+    retrieveData(url);
 }
 
     render() {

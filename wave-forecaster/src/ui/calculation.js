@@ -1,5 +1,4 @@
 import React from "react";
-import {retrieve} from "../Functions/Functions";
 
 
 class Calculation extends React.Component {
