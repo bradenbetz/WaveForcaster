@@ -1,6 +1,5 @@
 import React from 'react';
 import {Menu, Header} from 'semantic-ui-react';
-import { link } from 'react-router-dom';
 import 'semantic-ui-css/semantic.min.css';
 
 
@@ -20,7 +19,6 @@ class NavBar extends React.Component {
                 </Menu.Item>
                     <Menu inverted secondary>
                         <Menu.Item
-                            link to="/SpotCheck"
                             name='Forecast'
                             active={activeItem === 'Forecast'}
                             onClick={this.handleItemClick}

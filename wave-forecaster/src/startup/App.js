@@ -23,6 +23,7 @@ componentDidMount() {
     return (
         <div>
             <NavBar/>
+            <SpotCheck/>
         </div>
 
     )
