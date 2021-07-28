@@ -21,6 +21,8 @@ class App extends React.Component {
 - Create function to retrieve .txt file - done
 - display the calculated wave height working on it
 - make it fancy
+-Then create a favorites feature that allows users to save spots based on preference and group them together through account
+
  */
 
 componentDidMount() {
