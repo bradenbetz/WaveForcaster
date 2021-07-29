@@ -1,10 +1,11 @@
 import $ from 'jquery'
 
 /*
-Grab .txt file from https://www.ndbc.noaa.gov/data/realtime2/51201.txt - done
+Grab .txt file from const url = "https://www.ndbc.noaa.gov/data/realtime2/51201.txt"; - done
  */
 
 export const retrieveData = (url) => {
+
     $.ajax({
         type: 'GET',
         url: url,
@@ -19,7 +20,9 @@ export const retrieveData = (url) => {
     });
 
     function parseFile(data) {
-        console.log(data);
+        const myArr = data.split('  ');
+        console.log(myArr[30], myArr[31], myArr[32]);
+
     }
 
 // parse txt file to get the most up to date and store into swell and period respectively
