@@ -45,10 +45,12 @@ class App extends React.Component {
                 alert("BUOY IS DOWN");
             },
         });
+        // array values between 28-33 are the values i will need, i may or may not need do use other values when winter
+        // season starts
         function parseFile (data) {
             const myArr = data.split('  ');
             let swell = parseFloat(myArr[28]) * 3.28084;
-            let period = parseFloat(myArr[31]);
+            let period = parseFloat(myArr[30]);
             let angle = parseInt(myArr[32]);
             swell = Math.round(swell * 10) / 10
             self.setState({
@@ -61,7 +63,6 @@ class App extends React.Component {
 
     componentDidMount() {
     this.retrieveData(url);
-    //this.callAPI();
     }
 
     render() {
