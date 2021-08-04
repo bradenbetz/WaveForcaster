@@ -42,7 +42,11 @@ class App extends React.Component {
         });
         function parseFile (data) {
             const myArr = data.split('  ');
-            console.log(myArr[30], myArr[31], myArr[32]);
+            let swell = parseFloat(myArr[28]) * 3.28084;
+            let period = parseFloat(myArr[31]);
+            let angle = parseInt(myArr[32]);
+            swell = Math.round(swell * 10) / 10
+            console.log(swell, period, angle);
         }
     }
 
