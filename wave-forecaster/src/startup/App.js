@@ -12,23 +12,28 @@ import $ from "jquery";
 
  */
 
-const url = "https://www.ndbc.noaa.gov/data/realtime2/51201.txt";
+const url = "http://localhost:8080/https://www.ndbc.noaa.gov/data/realtime2/51201.txt";
 
 class App extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { apiResponse: "" };
-        this.state = {appData: {}};
+        this.state = {
+            swell: 0,
+            period: 0,
+            angle: 0
+        }
     }
 
+    /*
     callAPI() {
         fetch("http://localhost:9000/testAPI")
             .then(res => res.text())
             .then(res => this.setState({ apiResponse: res }));
     }
-
+    */
     retrieveData (url) {
+        let self = this;
         $.ajax({
             type: 'GET',
             url: url,
@@ -46,7 +51,11 @@ class App extends React.Component {
             let period = parseFloat(myArr[31]);
             let angle = parseInt(myArr[32]);
             swell = Math.round(swell * 10) / 10
-            console.log(swell, period, angle);
+            self.setState({
+                swell: swell,
+                period: period,
+                angle: angle
+            })
         }
     }
 
@@ -60,7 +69,9 @@ class App extends React.Component {
         <div>
             <NavBar/>
             <SpotCheck/>
-            <p className="App-intro">{this.state.apiResponse}</p>
+            <p>{this.state.swell} ft</p>
+            <p>{this.state.period} sec </p>
+            <p>{this.state.angle} degrees</p>
         </div>
 
     )
