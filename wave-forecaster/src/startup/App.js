@@ -68,10 +68,11 @@ class App extends React.Component {
     return (
         <div>
             <NavBar/>
-            <SpotCheck/>
-            <p>{this.state.swell} ft</p>
-            <p>{this.state.period} sec </p>
-            <p>{this.state.angle} degrees</p>
+            <SpotCheck
+                swell={this.state.swell}
+                period = {this.state.period}
+                angle = {this.state.angle}
+            />
         </div>
 
     )
