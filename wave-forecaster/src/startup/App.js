@@ -12,7 +12,7 @@ import $ from "jquery";
 
  */
 
-const url = "https://www.ndbc.noaa.gov/data/realtime2/51201.txt";
+const url = "http://localhost:8080/https://www.ndbc.noaa.gov/data/realtime2/51201.txt";
 
 class App extends React.Component {
 
