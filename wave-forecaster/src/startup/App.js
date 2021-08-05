@@ -1,7 +1,7 @@
 import '../style/App.css';
 import React from 'react';
 import NavBar from "../ui/NavBar.js";
-import SpotCheck from "../ui/SpotCheck";
+import { SpotName } from "../ui/SpotCheck";
 import $ from "jquery";
 
 /*TODO
@@ -68,7 +68,7 @@ class App extends React.Component {
     return (
         <div>
             <NavBar/>
-            <SpotCheck
+            <SpotName
                 swell={this.state.swell}
                 period = {this.state.period}
                 angle = {this.state.angle}
