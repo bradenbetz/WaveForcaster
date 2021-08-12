@@ -1,7 +1,7 @@
 import '../style/App.css';
 import React from 'react';
 import NavBar from "../ui/NavBar.js";
-import SpotCheck from "../ui/SpotCheck";
+import { SpotName } from "../ui/SpotCheck";
 import $ from "jquery";
 
 /*TODO
@@ -48,10 +48,10 @@ class App extends React.Component {
         // array values between 28-33 are the values i will need, i may or may not need do use other values when winter
         // season starts
         function parseFile (data) {
-            const myArr = data.split('  ');
-            let swell = parseFloat(myArr[28]) * 3.28084;
-            let period = parseFloat(myArr[30]);
-            let angle = parseInt(myArr[32]);
+            const myArr = data.split(' ');
+            let swell = parseFloat(myArr[84]) * 3.28084;
+            let period = parseFloat(myArr[88]);
+            let angle = parseInt(myArr[92]);
             swell = Math.round(swell * 10) / 10
             self.setState({
                 swell: swell,
@@ -69,10 +69,11 @@ class App extends React.Component {
     return (
         <div>
             <NavBar/>
-            <SpotCheck/>
-            <p>{this.state.swell} ft</p>
-            <p>{this.state.period} sec </p>
-            <p>{this.state.angle} degrees</p>
+            <SpotName
+                swell={this.state.swell}
+                period = {this.state.period}
+                angle = {this.state.angle}
+            />
         </div>
 
     )
