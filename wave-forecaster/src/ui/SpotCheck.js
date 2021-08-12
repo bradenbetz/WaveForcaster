@@ -18,11 +18,10 @@ export class SpotName extends React.Component {
     render() {
         return (
             <Container align={'center'}>
-                <h2 align='center' >SPOT CHECK</h2>
+                <h2 align='center' > {this.props.data}
+                </h2>
                 <Calculation
-                    swell={this.props.swell}
-                    period = {this.props.period}
-                    angle = {this.props.angle}
+                    {...this.props.data}
                 />
             </Container>
         )

@@ -18,11 +18,7 @@ class App extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            swell: 0,
-            period: 0,
-            angle: 0
-        }
+        this.state = {}
     }
 
     /*
@@ -52,9 +48,7 @@ class App extends React.Component {
             let angle = parseInt(myArr[92]);
             swell = Math.round(swell * 10) / 10
             self.setState({
-                swell: swell,
-                period: period,
-                angle: angle
+                data: [swell, period, angle]
             })
         }
     }
@@ -69,9 +63,7 @@ class App extends React.Component {
         <div>
             <NavBar/>
             <SpotName
-                swell={this.state.swell}
-                period = {this.state.period}
-                angle = {this.state.angle}
+                {...this.props.data}
             />
         </div>
 

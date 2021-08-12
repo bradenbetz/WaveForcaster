@@ -36,9 +36,6 @@ class Calculation extends React.Component {
         return (
             <div>
                 <h2 align='center' >
-                    {this.props.swell} ft " "
-                    {this.props.period} sec" "
-                    {this.props.angle} degrees" "
                 </h2>
             </div>
         )
