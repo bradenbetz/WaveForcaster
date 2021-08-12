@@ -46,10 +46,10 @@ class App extends React.Component {
             },
         });
         function parseFile (data) {
-            const myArr = data.split('  ');
-            let swell = parseFloat(myArr[28]) * 3.28084;
-            let period = parseFloat(myArr[31]);
-            let angle = parseInt(myArr[32]);
+            const myArr = data.split(' ');
+            let swell = parseFloat(myArr[84]) * 3.28084;
+            let period = parseFloat(myArr[88]);
+            let angle = parseInt(myArr[92]);
             swell = Math.round(swell * 10) / 10
             self.setState({
                 swell: swell,

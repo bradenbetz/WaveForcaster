@@ -1,39 +1,44 @@
 import React from "react";
 //import PropTypes from 'prop-types'
 
-// noinspection SpellCheckingInspection
 class Calculation extends React.Component {
     /* TODO
         Calculates spot heights
         make a dropdown to choose a spot, once clicked it will give the appropriate wave height for the chosen spot
      */
 
-    swell = this.props.swell;
-    period = this.props.period;
-    angle = this.props.angle;
-    calculation = 0;
+    swell = parseInt(this.props.swell);
+    period = parseInt(this.props.period);
+    angle = parseInt(this.props.angle);
+    calculation = null;
     waveHeight = 0;
 
-    calculateWaveHeight = (calculation) => {
+    calculateWaveHeight = () => {
+        let data = [""];
         if (this.swell < 6 && this.swell > 4.5 && this.period < 12.5 && this.period > 10.5) {
-            calculation = 10;
+            data = "10ft";
+        } else if (this.swell > 1.5 && this.swell < 3.7 && this.period < 16 && this.period > 12) {
+            data = "3 - 5ft";
         } else {
-            calculation = 1;
+            data = "flat";
         }
         return {
-            calculation
+            data
         };
     }
 
     componentDidMount() {
         this.waveHeight = this.calculateWaveHeight(this.calculation);
+        console.log(this.waveHeight);
     }
 
     render() {
         return (
             <div>
                 <h2 align='center' >
-                    {this.waveHeight} ft
+                    {this.props.swell} ft " "
+                    {this.props.period} sec" "
+                    {this.props.angle} degrees" "
                 </h2>
             </div>
         )

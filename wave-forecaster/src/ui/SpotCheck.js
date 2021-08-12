@@ -12,19 +12,21 @@ TODO
     GET DROPDOWN FROM Bootstrap
  */
 
-export const SpotName = (props) => {
+export class SpotName extends React.Component {
 
     //const [spot, setSpot] = useState([]);
+    render() {
         return (
-                <Container align={'center'}>
-                    <h2 align='center' >SPOT CHECK</h2>
-                    <Calculation
-                        swell={props.swell}
-                        period = {props.period}
-                        angle = {props.angle}
-                    />
-                </Container>
+            <Container align={'center'}>
+                <h2 align='center' >SPOT CHECK</h2>
+                <Calculation
+                    swell={this.props.swell}
+                    period = {this.props.period}
+                    angle = {this.props.angle}
+                />
+            </Container>
         )
+    }
 }
 
 
